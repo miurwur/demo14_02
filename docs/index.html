@@ -3,17 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Статичный сайт с элегантным фиолетовым дизайном">
-    <title>Фиолетовый статичный сайт</title>
-    
-    <!-- Подключение шрифтов -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome для иконок (без смайликов) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <meta name="author" content="Barykina Anna">
+    <title>Портфолио | Barykina Anna</title>
     <style>
         * {
             margin: 0;
@@ -22,574 +13,289 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: #2d2d3a;
-            background: linear-gradient(135deg, #f5f0ff 0%, #e9e0ff 100%);
+            background: linear-gradient(135deg, #f5f0ff, #e9e0ff);
             min-height: 100vh;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 20px;
         }
         
-        /* Фиолетовая цветовая схема */
         :root {
             --primary: #6b4b9c;
             --primary-light: #9f7eda;
             --primary-dark: #4a2c6b;
-            --secondary: #b8a3d9;
-            --accent: #8b6fc6;
-            --bg-gradient: linear-gradient(145deg, #f8f3ff, #ede5ff);
-            --shadow: 0 15px 35px rgba(107, 75, 156, 0.15);
-            --shadow-hover: 0 20px 40px rgba(107, 75, 156, 0.25);
         }
         
-        /* Header */
         header {
             background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(107, 75, 156, 0.15);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(107, 75, 156, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
         }
         
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
         
         .logo {
-            font-size: 26px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 40px;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: #2d2d3a;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            transition: width 0.3s ease;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero секция */
-        .hero {
-            padding: 100px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(159, 122, 218, 0.15) 0%, rgba(107, 75, 156, 0.05) 70%);
-            border-radius: 50%;
-            z-index: -1;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(107, 75, 156, 0.12) 0%, rgba(159, 122, 218, 0.03) 70%);
-            border-radius: 50%;
-            z-index: -1;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .hero-title {
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--primary-dark);
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-        }
-        
-        .hero-title span {
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .hero-title span::before {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: rgba(159, 122, 218, 0.2);
-            z-index: -1;
-        }
-        
-        .hero-text {
-            font-size: 18px;
-            color: #4a4a5a;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            max-width: 90%;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .btn {
-            padding: 15px 35px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-            letter-spacing: 0.3px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
-            color: white;
-            box-shadow: 0 10px 25px rgba(107, 75, 156, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(107, 75, 156, 0.4);
-            background: linear-gradient(145deg, var(--primary-dark), var(--primary));
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            color: var(--primary);
-            border: 2px solid var(--primary-light);
-            box-shadow: 0 8px 20px rgba(107, 75, 156, 0.1);
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(107, 75, 156, 0.2);
-        }
-        
-        .hero-image {
-            position: relative;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 30px;
-            box-shadow: var(--shadow);
-            transition: transform 0.5s ease;
-        }
-        
-        .hero-image:hover img {
-            transform: scale(1.02);
-        }
-        
-        /* Секция преимуществ */
-        .features {
-            padding: 80px 0;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(5px);
-            border-radius: 60px 60px 0 0;
-            margin-top: 40px;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 40px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--primary-dark);
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
         }
         
-        .section-subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: #5a5a6e;
-            max-width: 700px;
-            margin: 0 auto 60px;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .nav {
+            display: flex;
             gap: 30px;
         }
         
-        .feature-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 40px 30px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(107, 75, 156, 0.08);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(107, 75, 156, 0.1);
+        .nav a {
+            text-decoration: none;
+            color: #2d2d3a;
+            font-weight: 500;
+            transition: color 0.3s;
         }
         
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            background: white;
-            border-color: var(--primary-light);
+        .nav a:hover {
+            color: var(--primary);
         }
         
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(145deg, var(--primary-light), var(--accent));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 10px 20px rgba(107, 75, 156, 0.2);
+        .hero {
+            padding: 60px 0;
+            text-align: center;
         }
         
-        .feature-card h3 {
-            font-size: 22px;
+        .hero h1 {
+            font-size: 42px;
             color: var(--primary-dark);
             margin-bottom: 15px;
+        }
+        
+        .hero .author {
+            font-size: 20px;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #4a4a5a;
+        }
+        
+        .section {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .lab-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(107, 75, 156, 0.1);
+            transition: transform 0.3s;
+            border: 1px solid rgba(107, 75, 156, 0.2);
+        }
+        
+        .lab-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 15px 30px rgba(107, 75, 156, 0.15);
+        }
+        
+        .lab-number {
+            font-size: 14px;
+            color: var(--primary);
             font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
         
-        .feature-card p {
+        .lab-card h3 {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .lab-card p {
             color: #5a5a6e;
-            font-size: 16px;
-            line-height: 1.7;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
         
-        /* Секция портфолио */
-        .portfolio {
-            padding: 80px 0;
+        .lab-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: rgba(107, 75, 156, 0.1);
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
         }
         
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 50px;
+            gap: 25px;
         }
         
         .portfolio-item {
-            position: relative;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            height: 300px;
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(74, 44, 107, 0.9), rgba(107, 75, 156, 0.6));
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            color: white;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-overlay h4 {
-            font-size: 24px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .portfolio-overlay p {
-            font-size: 16px;
-            opacity: 0.9;
-        }
-        
-        /* Секция контактов */
-        .contact {
-            padding: 80px 0;
-            background: var(--bg-gradient);
-            border-radius: 0 0 60px 60px;
-        }
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .contact-info h3 {
-            font-size: 32px;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-        
-        .contact-info p {
-            color: #5a5a6e;
-            margin-bottom: 30px;
-            font-size: 18px;
-        }
-        
-        .contact-details {
-            margin-top: 40px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(107, 75, 156, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .portfolio-img {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
-            font-size: 20px;
-            box-shadow: 0 5px 15px rgba(107, 75, 156, 0.1);
-        }
-        
-        .contact-text {
-            color: #2d2d3a;
-            font-weight: 500;
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: var(--shadow);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e8e0f0;
-            border-radius: 15px;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            background: #faf8ff;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: white;
-            box-shadow: 0 0 0 5px rgba(107, 75, 156, 0.1);
-        }
-        
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
             color: white;
-            border: none;
-            border-radius: 15px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 25px rgba(107, 75, 156, 0.2);
+            font-size: 48px;
+            font-weight: 300;
         }
         
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(107, 75, 156, 0.3);
+        .portfolio-info {
+            padding: 20px;
         }
         
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 30px 0;
-            margin-top: 60px;
+        .portfolio-info h4 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
         }
         
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .portfolio-info p {
+            color: #6a6a7a;
             font-size: 14px;
         }
         
-        .footer-links a:hover {
-            color: white;
+        .about {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 30px 0;
         }
         
-        .social-links {
+        .about-content {
             display: flex;
-            gap: 20px;
+            gap: 40px;
+            align-items: center;
         }
         
-        .social-links a {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 18px;
-            transition: all 0.3s ease;
+        .about-text p {
+            margin-bottom: 15px;
+            color: #4a4a5a;
         }
         
-        .social-links a:hover {
+        .student-info {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            min-width: 250px;
+        }
+        
+        .student-info h4 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .student-info ul {
+            list-style: none;
+        }
+        
+        .student-info li {
+            margin-bottom: 10px;
+            color: #5a5a6e;
+        }
+        
+        .contact {
+            text-align: center;
+            padding: 40px;
+            background: rgba(107, 75, 156, 0.1);
+            border-radius: 30px;
+        }
+        
+        .contact h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .contact-email {
+            font-size: 20px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        footer {
+            background: var(--primary-dark);
             color: white;
-            transform: translateY(-3px);
+            padding: 25px 0;
+            margin-top: 50px;
+            text-align: center;
         }
         
-        /* Адаптивность */
-        @media (max-width: 1024px) {
-            .hero-title {
-                font-size: 42px;
-            }
-            
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        footer p {
+            opacity: 0.9;
+            font-size: 14px;
         }
         
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav {
                 gap: 20px;
             }
             
-            .nav-menu {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-text {
-                max-width: 100%;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .hero-image {
-                grid-row: 1;
-            }
-            
-            .features-grid,
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
             
-            .footer-content {
+            .about-content {
                 flex-direction: column;
-                gap: 20px;
                 text-align: center;
             }
             
-            .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
+            .hero h1 {
+                font-size: 32px;
             }
         }
     </style>
@@ -598,12 +304,12 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">PurpleStudio</div>
-                <nav class="nav-menu">
+                <div class="logo">Barykina Anna</div>
+                <nav class="nav">
                     <a href="#home">Главная</a>
-                    <a href="#features">Возможности</a>
-                    <a href="#portfolio">Работы</a>
-                    <a href="#contact">Контакты</a>
+                    <a href="#labs">Лабораторные</a>
+                    <a href="#portfolio">Проекты</a>
+                    <a href="#about">О себе</a>
                 </nav>
             </div>
         </div>
@@ -612,149 +318,126 @@
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <div>
-                        <h1 class="hero-title">
-                            Создаем <span>цифровые шедевры</span> в фиолетовых тонах
-                        </h1>
-                        <p class="hero-text">
-                            Разработка статичных сайтов с уникальным дизайном, 
-                            вниманием к деталям и современными технологиями. 
-                            Ваш проект в элегантном фиолетовом стиле.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary">Начать проект</a>
-                            <a href="#portfolio" class="btn btn-secondary">Посмотреть работы</a>
+                <h1>Портфолио студента</h1>
+                <div class="author">Barykina Anna</div>
+                <p>Здесь собраны мои лабораторные работы и учебные проекты за время обучения. Каждая работа отражает полученные навыки и прогресс в веб-разработке.</p>
+            </div>
+        </section>
+
+        <section id="labs" class="section">
+            <div class="container">
+                <h2 class="section-title">Лабораторные работы</h2>
+                <div class="lab-grid">
+                    <div class="lab-card">
+                        <div class="lab-number">Лабораторная работа №1</div>
+                        <h3>Основы HTML</h3>
+                        <p>Структура документа, заголовки, параграфы, списки и ссылки. Создание простой веб-страницы.</p>
+                        <div class="lab-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">Основы</span>
                         </div>
                     </div>
-                    <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1618221195710-0b4e6e6b4f3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дизайн интерьера в фиолетовых тонах">
+
+                    <div class="lab-card">
+                        <div class="lab-number">Лабораторная работа №2</div>
+                        <h3>CSS стилизация</h3>
+                        <p>Селекторы, цвета, шрифты, блоки. Базовое оформление веб-страниц.</p>
+                        <div class="lab-tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Стили</span>
+                        </div>
+                    </div>
+
+                    <div class="lab-card">
+                        <div class="lab-number">Лабораторная работа №3</div>
+                        <h3>Flexbox и Grid</h3>
+                        <p>Современные методы верстки. Создание адаптивных макетов.</p>
+                        <div class="lab-tags">
+                            <span class="tag">Flexbox</span>
+                            <span class="tag">Grid</span>
+                        </div>
+                    </div>
+
+                    <div class="lab-card">
+                        <div class="lab-number">Лабораторная работа №4</div>
+                        <h3>Формы</h3>
+                        <p>Создание форм обратной связи, валидация полей, стилизация элементов форм.</p>
+                        <div class="lab-tags">
+                            <span class="tag">Формы</span>
+                            <span class="tag">Ввод</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features">
+        <section id="portfolio" class="section">
             <div class="container">
-                <h2 class="section-title">Почему выбирают нас</h2>
-                <p class="section-subtitle">
-                    Сочетаем эстетику фиолетового с функциональностью и надежностью
-                </p>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3>Уникальный дизайн</h3>
-                        <p>Разрабатываем неповторимые визуальные решения, вдохновленные глубиной фиолетового цвета</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Чистый код</h3>
-                        <p>Пишем семантичный, валидный и оптимизированный код для быстрой загрузки страниц</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Адаптивность</h3>
-                        <p>Идеальное отображение на всех устройствах - от смартфонов до 4K мониторов</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio">
-            <div class="container">
-                <h2 class="section-title">Наши последние работы</h2>
-                <p class="section-subtitle">
-                    Проекты, выполненные с любовью к фиолетовой эстетике
-                </p>
-                
+                <h2 class="section-title">Учебные проекты</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дизайн сайта">
-                        <div class="portfolio-overlay">
-                            <h4>Lavender Dreams</h4>
-                            <p>Сайт для бренда косметики</p>
+                        <div class="portfolio-img">01</div>
+                        <div class="portfolio-info">
+                            <h4>Сайт-визитка</h4>
+                            <p>Персональный сайт с использованием HTML и CSS</p>
                         </div>
                     </div>
-                    
+
                     <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Веб-дизайн">
-                        <div class="portfolio-overlay">
-                            <h4>Purple Agency</h4>
-                            <p>Корпоративный сайт</p>
+                        <div class="portfolio-img">02</div>
+                        <div class="portfolio-info">
+                            <h4>Интернет-магазин</h4>
+                            <p>Макет магазина с каталогом и корзиной</p>
                         </div>
                     </div>
-                    
+
                     <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1618219904412-915f8f9e9c0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Интерфейс">
-                        <div class="portfolio-overlay">
-                            <h4>Violet Store</h4>
-                            <p>Интернет-магазин</p>
+                        <div class="portfolio-img">03</div>
+                        <div class="portfolio-info">
+                            <h4>Блог</h4>
+                            <p>Шаблон блога с карточками статей</p>
                         </div>
                     </div>
-                    
+
                     <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1618221184920-7b2b3b6b9e1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Приложение">
-                        <div class="portfolio-overlay">
-                            <h4>Amethyst App</h4>
-                            <p>Лендинг приложения</p>
+                        <div class="portfolio-img">04</div>
+                        <div class="portfolio-info">
+                            <h4>Лендинг</h4>
+                            <p>Одностраничный сайт для учебного проекта</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="about" class="section">
             <div class="container">
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Давайте создадим что-то особенное</h3>
-                        <p>Расскажите о своем проекте, и мы воплотим его в фиолетовых тонах</p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <span class="contact-text">hello@purplestudio.ru</span>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <span class="contact-text">+7 (999) 123-45-67</span>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <span class="contact-text">Москва, ул. Цветная, 15</span>
-                            </div>
+                <div class="about">
+                    <h2 class="section-title">О себе</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>Меня зовут Barykina Anna, я студентка направления "Веб-разработка". Активно изучаю современные технологии создания сайтов и веб-приложений.</p>
+                            <p>В процессе обучения выполнила множество лабораторных работ и учебных проектов, которые представлены в этом портфолио.</p>
+                        </div>
+                        <div class="student-info">
+                            <h4>Информация</h4>
+                            <ul>
+                                <li>Факультет: Информационных технологий</li>
+                                <li>Курс: 2</li>
+                                <li>Группа: В-21</li>
+                                <li>Направление: Веб-разработка</li>
+                            </ul>
                         </div>
                     </div>
-                    
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Сообщение" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Отправить сообщение</button>
-                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact">
+                    <h3>Связь со мной</h3>
+                    <div class="contact-email">anna.barykina@edu.ru</div>
                 </div>
             </div>
         </section>
@@ -762,68 +445,21 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="logo" style="color: white; -webkit-text-fill-color: white;">PurpleStudio</div>
-                <div class="footer-links">
-                    <a href="#home">Главная</a>
-                    <a href="#features">Возможности</a>
-                    <a href="#portfolio">Работы</a>
-                    <a href="#contact">Контакты</a>
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-behance"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+            <p>© 2026 Barykina Anna. Все права защищены</p>
+            <p style="margin-top: 10px; font-size: 12px;">Сайт для портфолио студента</p>
         </div>
     </footer>
 
     <script>
-        // Плавная прокрутка к якорям
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Плавная прокрутка
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
-        });
-
-        // Обработка отправки формы
-        const form = document.querySelector('.contact-form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Спасибо за сообщение! Мы свяжемся с вами в ближайшее время.');
-                this.reset();
-            });
-        }
-
-        // Анимация появления элементов при скролле
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .portfolio-item, .contact-content > *').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
         });
     </script>
 </body>
